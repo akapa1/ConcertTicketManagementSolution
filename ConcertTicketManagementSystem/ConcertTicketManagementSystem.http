@@ -1,6 +1,29 @@
 @ConcertTicketManagementSystem_HostAddress = http://localhost:5139
 
-GET {{ConcertTicketManagementSystem_HostAddress}}/weatherforecast/
+### Get all events
+GET {{ConcertTicketManagementSystem_HostAddress}}/api/Events
 Accept: application/json
 
-###
+### Get event by ID
+GET {{ConcertTicketManagementSystem_HostAddress}}/api/Events/1
+Accept: application/json
+
+### Create new event
+POST {{ConcertTicketManagementSystem_HostAddress}}/api/Events
+Content-Type: application/json
+
+### Update new event
+PUT {{ConcertTicketManagementSystem_HostAddress}}/api/Events/1
+Content-Type: application/json
+
+### Reserve a ticket
+POST {{ConcertTicketManagementSystem_HostAddress}}/api/Tickets/reserve?eventId=1&ticketTypeId=1
+
+### Purchase a ticket
+POST {{ConcertTicketManagementSystem_HostAddress}}/api/Tickets/purchase/1
+
+### Cancel reservation
+POST {{ConcertTicketManagementSystem_HostAddress}}/api/Tickets/cancel/1
+
+### Get all tickets for an event
+GET {{ConcertTicketManagementSystem_HostAddress}}/api/Tickets/event/1
